@@ -1,3 +1,12 @@
+import statsmodels.api as sm
+import statsmodels.formula.api as smf
+from keras.models import Sequential
+from keras.layers import Dense,Input,Dropout,SimpleRNN
+from sklearn.ensemble import RandomForestRegressor
+from keras import models
+import pandas as pd
+import numpy as np
+
 def compute(model,data_test,component):
 
   dist = lambda x,y: np.sqrt(np.sum((x-y)**2))
