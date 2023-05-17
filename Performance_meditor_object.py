@@ -7,12 +7,12 @@ class Performance_meditor:
   def __init__(self,table,component):
     self.table = table
     self.component = component
-    self.table_of_contents = None
+    self.table_of_metrics = None
     self.dictionary_of_metrics = {}
 
     self.init_dict()
 
-    self.init_table_of_contents()
+    self.init_table_of_metrics()
 
   def init_dict(self):
     metric_label = ['R2','RMSE','NRMSE','STD DEV']
@@ -48,6 +48,6 @@ class Performance_meditor:
       
     print('\nMedições realizadas!\n')
   
-  def init_table_of_contents(self):
-    self.table_of_contents = pd.DataFrame(data = self.dictionary_of_metrics,
+  def init_table_of_metrics(self):
+    self.table_of_metrics = pd.DataFrame(data = self.dictionary_of_metrics,
                                           index=['Model','Moqa','Rel'])
