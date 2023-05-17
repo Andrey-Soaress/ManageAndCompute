@@ -12,12 +12,15 @@ def load_my_model(path,type_arq):
         return load_h5_model(path)
 
 def load_bin_model(path):
+    model_arq = open(path,'rb')
     model = None
+    
     try:
-        model = pickle.load(path,'r')
+        model = pickle.load(model_arq)
     except EOFError:
         if model != None: print("The model has been loaded!")
-
+    model_arq.close()
+    
     return model
 
 def load_h5_model(path)
