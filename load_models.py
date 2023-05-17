@@ -5,7 +5,7 @@ from keras.optimizers import Adam
 from sklearn.ensemble import RandomForestRegressor
 from tensorflow.keras.models import load_model
 
-def load_model(path,type_arq):
+def load_my_model(path,type_arq):
     if type_arq == 'h5':
         return load_bin_model(path)
     elif type_arq == 'bin':
