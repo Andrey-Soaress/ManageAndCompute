@@ -1,3 +1,7 @@
+from sklearn.metrics import r2_score,mean_squared_error
+import pandas as pd
+import numpy as np
+
 class Performance_meditor:
 
   def __init__(self,table,component):
