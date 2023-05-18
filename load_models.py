@@ -5,11 +5,17 @@ from keras.optimizers import Adam
 from sklearn.ensemble import RandomForestRegressor
 from tensorflow.keras.models import load_model
 
-def load_my_model(path,type_arq):
-    if type_arq == 'h5':
-        return load_bin_model(path)
-    elif type_arq == 'bin':
+def load_my_model(paths):
+    paths_quantity = len(paths)
+    
+    if paths_quantity == 0: 
+        raise Exception('No path files to read')
+        return
+    
+    if paths_quantity == 2:
         return load_h5_model(path)
+    else paths_quantity == 1:
+        return load_bin_model(path)
 
 def load_bin_model(path):
     model_arq = open(path,'rb')
@@ -24,7 +30,9 @@ def load_bin_model(path):
     return model
 
 def load_h5_model(path)
-    model = load_model(path)
+    model = load_bin_model(path[0])
+    model['models']['modelo'] = load_model(path[1])
+    
     return model    
 
 if __name__ == '__main__':
