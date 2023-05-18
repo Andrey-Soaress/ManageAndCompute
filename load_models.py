@@ -15,7 +15,7 @@ def load_my_model(paths):
     if paths_quantity == 2:
         return load_h5_model(path)
     else paths_quantity == 1:
-        return load_bin_model(path)
+        return load_bin_model(path[0])
 
 def load_bin_model(path):
     model_arq = open(path,'rb')
