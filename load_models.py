@@ -4,6 +4,7 @@ from keras.layers import Dense,Input,Dropout,SimpleRNN,LSTM
 from keras.optimizers import Adam
 from sklearn.ensemble import RandomForestRegressor
 from tensorflow.keras.models import load_model
+import statsmodels.api as sm
 
 def load_my_model(paths):
     paths_quantity = len(paths)
@@ -13,9 +14,9 @@ def load_my_model(paths):
         return
     
     if paths_quantity == 2:
-        return load_h5_model(path)
-    else paths_quantity == 1:
-        return load_bin_model(path[0])
+        return load_h5_model(paths)
+    elif paths_quantity == 1:
+        return load_bin_model(paths[0])
 
 def load_bin_model(path):
     model_arq = open(path,'rb')
@@ -29,7 +30,7 @@ def load_bin_model(path):
     
     return model
 
-def load_h5_model(path)
+def load_h5_model(path):
     model = load_bin_model(path[0])
     model['models']['modelo'] = load_model(path[1])
     
