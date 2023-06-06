@@ -69,6 +69,6 @@ class Resume:
             
         for i,subdir in enumerate(temporary_path[:-1]):
             path += subdir + "/"
-        path += title
+        path += self.title
         
-        self.table.to_csv(title,sep=';')
+        self.table.to_csv(path,sep=';')
