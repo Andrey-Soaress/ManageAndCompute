@@ -6,7 +6,7 @@ class Resume:
     def __init__(self, path, title):
 
         self.special_chars = "@#$*()!;/?[]{}-_=+"
-        self.letters = "abcdefghijklmnopqrstuvwjyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+        self.letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
         self.log_errors = []
         self.path = path
         self.title = title
